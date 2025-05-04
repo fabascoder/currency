@@ -154,6 +154,33 @@ main {
     text-align: center;
 }
 
+.name-text {
+    background-color: #dedcdc;
+}
+
+.btn-name {
+    margin-top: 20px;
+    font-family: Kumbh sans;
+    color: var(--cor-pincipal);
+    border: none;
+    border-radius: 5px;
+    margin-left: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 4px 14px;
+}
+
+.btn-name:hover {
+    opacity: 2;
+    color: var(--cor-terciaria)
+}
+.result {
+    margin-top:15px;
+    font-size: 14px
+}
+
+
 .container-button {
     display: flex;
     align-items: center;
