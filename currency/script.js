@@ -35,38 +35,31 @@ function scroll() {
         requestAnimationFrame(animationScroll);
       });
     });
-}
-  scroll();
+}scroll();
   
-  function sorteio() {
+
     const nameTitle = document.querySelector('.name-title');
     const sec2 = document.querySelector('.sec-3');
     const btn = document.querySelector('.button-prin');
     const btnReload = document.querySelector('.button-reload');
     nameTitle.innerHTML = "-";
-    const nomes = [''];
-  
+    const nomeOriginal = [''];
+    const nomes = nomeOriginal.filter(item => item !== "")
+
     function nomeSelecionado() {
+      if(nomes.length > 0 && nomes.every(item => item !== "")) {
       let loop = Math.floor(Math.random() * nomes.length);
       nameTitle.innerHTML = nomes[loop];
-  
       nameTitle.classList.add('active-div');
       sec2.classList.add('sec-3-active');
       btnReload.classList.add('reload-active');
       console.log(nomes);
-    }
-  
-    function btnAtivo() {
-      btn.disabled = true;
-    }
-  
-    btn.addEventListener('click', () => {
       btn.classList.add('button-active');
-      nomeSelecionado();
-      btnAtivo();
-    });
+      }
+    }
+    btn.addEventListener('click', nomeSelecionado)
   
-    btn.addEventListener('click', btnAtivo);
+
   
     function reloadAtivo() {
       btn.disabled = false;
@@ -86,7 +79,6 @@ function scroll() {
       let res = document.querySelector('.result');
       const ul = document.querySelector('.nomes-disponiveis');
       const nome = nameText.value.trim();
-  
       if (nome === "") {
         res.innerHTML = 'Digite um nome válido!';
         res.style.color = 'red';
@@ -113,6 +105,6 @@ function scroll() {
     }
   
     btnName.addEventListener('click', btnNameActive);
-  }
-  sorteio();
+  
+
   
